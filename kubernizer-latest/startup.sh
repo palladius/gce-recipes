@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VER=1.0
+VER=1.1
 
 #################################
 ## KUBERNIZER
@@ -32,9 +32,16 @@ mkdir -p /opt
 git clone https://github.com/GoogleCloudPlatform/kubernetes.git /opt/kubernetes &&
 	cd /opt/kubernetes &&
 		yes | make release &&
-			touch /root/03-kubernetes-released.touch
+			touch /root/03-kubernetes-latest.touch
+
+(
+echo "# Added by kubernetes-latest startup script on $(date):"
+echo "export PATH=$PATH:/opt/kubernetes/_output/local/bin/linux/amd64/:/opt/kubernetes/_output/release-stage/server/linux-amd64/kubernetes/server/bin/"
+)>> .bashrc
 
 cd /opt/kubernetes &&
 	hack/dev-build-and-up.sh &&
 		touch /root/04-kubernetes-deb-build-and-up-correctly.touch
+
+/usr/local/bin/gcloud components update -q
 
