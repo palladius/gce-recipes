@@ -1,0 +1,5 @@
+# constants.sh
+
+PROJECT_ID=gibbocloud
+FAVORITE_ZONE=europe-west1-b
+FAVORITE_MACHINE_TYPE="n1-standard-1"
