@@ -4,7 +4,7 @@ source ../constants.sh
 
 # creates a different one every minute...
 TIMESTAMPOLO=$(date +%Y%m%d-%H%M)
-VER=0.9.2
+VER=0.9.2a
 
 HISTORY='
   0.9.2  ricc adding Google Storage...
