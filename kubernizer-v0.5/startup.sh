@@ -21,7 +21,9 @@ _install_kubernetes_05() {
 
 	cd /opt/kubernetes &&
 		cluster/kube-up.sh &&
-			touch /root/04-cluster-kube-up.OK.touch
+			touch /root/05-kube-v0.5.mas-o-menos.touch
+
+	touch /root/04-cluster-kube-up.OK.touch
 }
 
 #################################
