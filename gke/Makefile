@@ -1,8 +1,8 @@
 
-spinup:
+up:
 	./spin-up.sh
 
-spindown:
+down:
 	./spin-down.sh
 
 status:

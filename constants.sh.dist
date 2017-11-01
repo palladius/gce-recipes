@@ -1,5 +1,5 @@
 # constants.sh
 
-PROJECT_ID=gibbocloud
-FAVORITE_ZONE=europe-west1-b
-FAVORITE_MACHINE_TYPE="n1-standard-1"
+PROJECT_ID="change-with-your-project-id"     # Change to your project_id
+FAVORITE_ZONE="europe-west1-b"               # Change to your favorite zone
+FAVORITE_MACHINE_TYPE="n1-standard-1"        # Change to your favorite VM Type
