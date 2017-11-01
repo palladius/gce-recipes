@@ -1,0 +1,15 @@
+# This app just sleeps :)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleepy-ricc
+  labels:
+    app: sleepy
+    tier: some-serious-slacker-backend # :)
+spec:
+  containers:
+  - name: sleepy-ricc
+    image: ubuntu:latest
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 60; echo -en Zzz; done;" ]
