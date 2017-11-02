@@ -17,3 +17,6 @@ run-latest-p3008:
 
 tag-and-push: build images
 	./tag-and-push-to-gcr.io
+
+kubectl-run:
+	kubectl run prova-quickstart --image=gcr.io/ric-cccwiki/quickstart-image
