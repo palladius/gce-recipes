@@ -1,0 +1,24 @@
+# septober-service.yaml
+# Let's suppose I have one better version
+apiVersion: v1
+kind: Pod
+metadata:
+  name: septober-v11
+  namespace: riccardume
+  labels:
+    app: septober
+    version: "1.1"
+    tier: web-frontend
+    #description: "Ruby app by Ricc"
+    maturity: draft
+    env: staging
+    type: RubyOnRails
+    #repo-url: 'https://github.com/palladius/septober'
+    docker-url: TODO
+spec:
+  containers:
+  - name: septober-v11
+    image: palladius/septober:v1.1
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "cd /home/riccardo/git/septober && make run-prod" ]

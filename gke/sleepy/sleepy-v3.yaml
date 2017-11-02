@@ -1,0 +1,19 @@
+# Let's suppose I have one better version
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleepy-ricc-v3.1
+  namespace: riccardume
+  labels:
+    app: sleepy
+    tier: some-serious-slacker-backend # :)
+    version: "3.1"
+    pinco: sempronio
+    namespace: riccardume-useless
+spec:
+  containers:
+  - name: sleepy-ricc-v2
+    image: ubuntu:latest
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 60; echo -en Zzz ; done;" ]

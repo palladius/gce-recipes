@@ -1,6 +1,10 @@
 
 # creates SLEEPY app :)
 
+status:
+	kubectl get pods,rc,svc -L app -L version -L ns -L namespace # --namespace jenkins
+	kubectl get pods -L app -L version -L ns -L namespace --namespace riccardume
+
 # up BOTH v1/v2
 up:
 	kubectl create -f ./
@@ -12,5 +16,3 @@ down:
 	kubectl delete pvc -l app=sleepy
 	kubectl delete -f ./
 
-status:
-	kubectl get pods,rc,svc -L app -L version
