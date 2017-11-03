@@ -2,9 +2,9 @@
 
 build:
 	sudo docker build -t quickstart-image .
+
 images:
 	sudo docker images | grep quickstart-image
-
 
 pull-latest:
 	sudo /usr/local/google-cloud-sdk/bin/gcloud docker -- pull gcr.io/ric-cccwiki/quickstart-image

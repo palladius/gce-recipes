@@ -12,6 +12,9 @@ Which repos have which features?
 * Apache/HTTP services: 
     - `php-docker-app`
     - maybe others?
+* kubectl-ready pods:
+    - `redis-php-guestbook`
+
 
 # TODO
 
