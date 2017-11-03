@@ -1,3 +1,3 @@
 <?php  
-    echo ?Hello, Php?;  
+    echo ?Buongiorno, ciao da PHP su Apache - wOt! ?;  
 ?>  
