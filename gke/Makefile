@@ -11,6 +11,6 @@ logs:
 
 # Namespaces are used under jenkins/
 prep:
-	kubectl create ns riccardume
-	kubectl create ns jenkins
-	kubectl create ns demo
+	kubectl create ns riccardume  # riccardo stuff: pasta, septober, ..
+	kubectl create ns jenkins     # TODO
+	kubectl create ns buridone    # lots of stuff together, demo, helloworlds, ..

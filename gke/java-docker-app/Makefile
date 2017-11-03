@@ -2,7 +2,6 @@
 build:
 	docker build -t java-app .  
 
-
 run:
 	docker run java-app  
 
