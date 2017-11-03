@@ -11,3 +11,4 @@ sudo docker tag quickstart-image gcr.io/ric-cccwiki/quickstart-image:v$VER
 #gcloud docker -- push gcr.io/ric-cccwiki/quickstart-image
 sudo /usr/local/google-cloud-sdk/bin/gcloud docker -- push -f gcr.io/ric-cccwiki/quickstart-image
 sudo /usr/local/google-cloud-sdk/bin/gcloud docker -- push gcr.io/ric-cccwiki/quickstart-image:v$VER
+sudo /usr/local/google-cloud-sdk/bin/gcloud docker -- push gcr.io/ric-cccwiki/quickstart-image:latest
