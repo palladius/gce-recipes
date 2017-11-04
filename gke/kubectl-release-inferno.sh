@@ -17,3 +17,7 @@ kubectl run poddino-quickstart-image --image=gcr.io/ric-cccwiki/quickstart-image
 @echo Spinning up Redis Guestbook..
 kubectl create -f redis-php-guestbook/
 
+@echo Spinning up Mysql Wordpress with Persistent Volumes!
+mysql-wordpress-pd/spin-up.sh
+
+#docker run -p 3005:2368 -it ghost
