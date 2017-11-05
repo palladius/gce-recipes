@@ -11,7 +11,8 @@ WORKLOAD_NAME=${2:-Acme Hadoop Services}
 
 
 function logga_msg() {
-	gcloud beta logging write sleepy_msg "$1: hostname:$(hostname) doockercontainer:TODO"  
+	# gcloud beta logging write sleepy_msg "$1: hostname:$(hostname) doockercontainer:TODO"  
+	echo TODO install gcloud on Ubuntu container: $1
 }
 
 echo 1. Hello Im a sleepy process working for: $WORKLOAD_NAME
