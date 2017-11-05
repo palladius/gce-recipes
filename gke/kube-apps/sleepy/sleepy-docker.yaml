@@ -1,0 +1,17 @@
+# This app just sleeps :)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleepy-docker
+  labels:
+    app: sleepy
+    tier: batch-computation
+    version: "1.1"
+spec:
+  containers:
+  - name: sleepy-10
+    image: gcr.io/ric-cccwiki/sleepy:v1.2
+    args: [ "10" ]
+  - name: sleepy-3600
+    image: gcr.io/ric-cccwiki/sleepy:v1.2
+    args: [ "3600" ]
