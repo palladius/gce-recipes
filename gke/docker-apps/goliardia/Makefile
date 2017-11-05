@@ -23,6 +23,3 @@ debug-p3009: build
 
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
-
-tag-and-push: build
-	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
