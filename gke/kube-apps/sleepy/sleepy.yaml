@@ -2,14 +2,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sleepy-yaml
+  name: sleepy-manhaus
   labels:
     app: sleepy
-    tier: some-serious-slacker-backend # :)
+    tier: some-serious-slacker-backend
     version: "1.0"
 spec:
   containers:
-  - name: sleepy-yaml
+  - name: sleepy-manhaus
     image: ubuntu:latest
     # Just spin & wait forever
     command: [ "/bin/bash", "-c", "--" ]

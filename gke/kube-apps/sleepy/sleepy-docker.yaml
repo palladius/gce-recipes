@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sleepy-docker
+  name: sleepy-docker14
   labels:
     app: sleepy
     tier: batch-computation
@@ -15,3 +15,10 @@ spec:
   - name: sleepy-3600
     image: gcr.io/ric-cccwiki/sleepy:v1.2
     args: [ "3600" ]
+  - name: sleepy-v14-10sec
+    image: gcr.io/ric-cccwiki/sleepy:v1.4
+    args: [ "./simulate-long-workload.sh", "10", "easy-peasy-10sec-dflt" ]
+  - name: sleepy-v14-2h
+    image: gcr.io/ric-cccwiki/sleepy:v1.4s
+    args: [ "./simulate-long-workload.sh", "7200", "this is a long one (2h)" ]
+
