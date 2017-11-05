@@ -7,14 +7,19 @@
 ZONE=europe-west1-b
 PROJECT_ID=ric-cccwiki
 
-if [ "aaa$MYSQL_ROOT_PASSWORD" = "aaa" ]; then
-	echo MYSQL_ROOT_PASSWORD env not found. Please set export MYSQL_ROOT_PASSWORD=whateverPassYouWant
-	exit 42
-fi
+echo This is the NON GKE example - for GKE use the other folder thanks.
+exit 0
+# Since I only use GKE :)
+
+
+#if [ "aaa$MYSQL_ROOT_PASSWORD" = "aaa" ]; then
+#	echo MYSQL_ROOT_PASSWORD env not found. Please set export MYSQL_ROOT_PASSWORD=whateverPassYouWant#
+#	exit 42
+#fi
 
 # GCE prerequisites
-gcloud compute disks create --zone "$ZONE" --size 200GB mysql-disk
-gcloud compute disks create --zone "$ZONE" --size 200GB wordpress-disk
+#gcloud compute disks create --zone "$ZONE" --size 200GB mysql-disk
+#gcloud compute disks create --zone "$ZONE" --size 200GB wordpress-disk
 
 kubectl create -f local-volumes.yaml
 
