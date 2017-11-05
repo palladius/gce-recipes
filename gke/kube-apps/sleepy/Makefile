@@ -16,3 +16,6 @@ down:
 	kubectl delete pvc -l app=sleepy
 	kubectl delete -f ./
 
+
+up-sleepy-docker:
+	kubectl create -f sleepy-docker.yaml
