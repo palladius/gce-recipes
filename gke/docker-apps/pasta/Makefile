@@ -13,7 +13,7 @@ build: $(APPNAME)-files
 run: build
 	docker run -it palladius/$(APPNAME):$(VERSION) bash
 
-#debug-v.2alpha:
+debug-v.2alpha:
 	docker run -it palladius/pasta:v0.2alpha bash
 
 run-v1.1-p3000:
