@@ -1,7 +1,4 @@
 
-goliardia-files:
-	git clone https://github.com/palladius/goliardia goliardia-files
-
 
 VERSION = $(shell cat VERSION)
 APPNAME = goliardia
@@ -23,3 +20,6 @@ debug-p3009: build
 
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
+
+goliardia-files:
+	git clone https://github.com/palladius/goliardia goliardia-files
