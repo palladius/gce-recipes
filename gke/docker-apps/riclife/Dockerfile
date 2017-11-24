@@ -14,8 +14,16 @@ WORKDIR /var/www/riclife/
 # this works but installs newer bundler incompatible with r187 :/ ARGH!
 #RUN apt -y install bundler
 #RUN bundle install
+#RUN rake gems:install # doesnt work
 
-RUN rake gems:install
+# taking versions from Gemfile.lock:
+RUN gem install  bundler -v 1.16.0
+#RUN gem install calendar_date_select -v 1.16.4
+#RUN gem install icalendar -v 1.4.3
+#RUN gem install contacts
+
+RUN /root/.rbenv/versions/1.8.7-p375/bin/bundle install
+
 RUN rake db:setup
 EXPOSE 3000
 CMD ["script/server", "-b", "0.0.0.0"]

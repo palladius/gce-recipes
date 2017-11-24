@@ -29,3 +29,17 @@ debug-p3009: build
 
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
+
+# fixed a mnhouse
+# $ docker commit -m "fixed rubies n stuff a manhouse" -a "A N Other" `docker ps -l -q` riclife:funge2
+#sha256:57bee1f9ad6d6302d234a415587e33eb65210a091e2f8d8d73c931dd431c73b6
+# https://docs.oracle.com/cd/E77565_01/E75728/html/section_c5q_n2z_fp.html
+FUNGE = funge
+tag-and-push-funge:
+	docker commit -m "fixed ruby and bundler a manouse" -a "A N Other"   `docker ps -l -q` riclife:$(FUNGE)	
+	docker tag riclife:$(FUNGE) gcr.io/ric-cccwiki/riclife:$(FUNGE)
+	gcloud docker -- push gcr.io/ric-cccwiki/riclife:$(FUNGE)
+
+run-from-cloud-funge:
+	@echo If it funge pls try: /root/riclife/script/server or console or dbconsole
+	docker run -it gcr.io/ric-cccwiki/riclife:$(FUNGE) bash # try /root/

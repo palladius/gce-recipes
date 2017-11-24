@@ -16,7 +16,7 @@ RUN apt install -y ruby2.3
 # MECAB: https://code.google.com/archive/redirect/a/code.google.com/p/mecab?movedTo=http:%2F%2Ftaku910.github.io%2Fmecab%2F
 # Some japanese text2speech analyzer - not interested.
 
-#ENV PATH /root/.rbenv/shims:$PATH
+ENV PATH /root/.rbenv/shims:$PATH
 RUN rbenv install 1.8.7-p375
 RUN rbenv local 1.8.7-p375
 RUN gem install sqlite3
