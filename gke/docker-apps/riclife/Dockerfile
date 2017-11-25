@@ -13,7 +13,7 @@ RUN apt -y install graphviz
 # taking versions from Gemfile.lock:
 RUN gem install  bundler -v 1.16.0
 RUN /root/.rbenv/versions/1.8.7-p375/bin/bundle install
-RUN rake db:setup
+#RUN rake db:setup
 
 EXPOSE 3000
 
