@@ -13,8 +13,14 @@ build: $(APPNAME)-files
 run-local: build
 	docker run -it -p 0.0.0.0:3000:3000 $(APPNAME) bash
 
+run-prod:
+	docker run -it -p 0.0.0.0:3000:3000  pasta script/server -e production
+
 debug-v.2alpha:
 	docker run -it palladius/pasta:v0.2alpha bash
+
+docker-images:
+	docker images | grep pasta
 
 versions:
 	ruby -v 
