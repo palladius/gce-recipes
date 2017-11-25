@@ -26,5 +26,8 @@ RUN gem install mongrel
 RUN gem install rails -v 2.3.18
 RUN rbenv rehash
 
+COPY VERSION /RUBY-VERSION.riccardo
+
 WORKDIR /root
+
 CMD bash

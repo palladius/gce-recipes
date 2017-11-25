@@ -10,8 +10,12 @@ pasta-files:
 build: $(APPNAME)-files
 	docker build -t $(APPNAME) .
 
-run: build
-	docker run -it palladius/$(APPNAME):$(VERSION) bash
+run-debug: build
+	docker run -it $(APPNAME) bash
+
+run-local: build
+	docker run -it -p 0.0.0.0:3000:3000 $(APPNAME) bash
+
 
 debug-v.2alpha:
 	docker run -it palladius/pasta:v0.2alpha bash

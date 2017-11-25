@@ -1,5 +1,3 @@
-# cant find it
-#FROM ruby:2.3
 # Defined in ../ruby-1.8.7/ ==> wOt?!??
 FROM ruby-1.8.7 
 
