@@ -1,6 +1,7 @@
 
 VERSION = $(shell cat VERSION)
 APPNAME = riclife
+PRIVATEDB = /bin/true
 
 list:
 	@cat Makefile

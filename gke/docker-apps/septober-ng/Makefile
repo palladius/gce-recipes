@@ -19,7 +19,6 @@ restart:
 	sleep 1
 	make up
 
-
 ###########################
 # docker inspiration: https://github.com/kstaken/dockerfile-examples
 

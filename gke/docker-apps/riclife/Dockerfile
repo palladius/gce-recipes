@@ -1,6 +1,8 @@
 # Defined in ../ruby-1.8.7/ ==> wOt?!??
 FROM ruby-1.8.7 
 
+MAINTAINER Riccardo Carlesso <riccardo.carlesso@gmail.com>
+
 COPY riclife-files/* /var/www/riclife/
 
 # TODO Use SECRETS to get USER and PASS

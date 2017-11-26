@@ -1,27 +1,26 @@
 
 VERSION = $(shell cat VERSION)
-APPNAME = pasta
+APPNAME = ricniftystore
 PRIVATEDB = /bin/false
+LOCAL_PORT = 3002
 
-# https://hub.docker.com/r/palladius/pasta/
-
-pasta-files: 
-	git clone https://github.com/palladius/pasta $(APPNAME)-files
+$(APPNAME)-files: 
+	git clone https://github.com/palladius/riccardo_nifty_store $(APPNAME)-files
 
 build: $(APPNAME)-files
 	docker build -t $(APPNAME) .
 
 run-local: build
-	docker run -it -p 0.0.0.0:3000:3000 $(APPNAME) bash
+	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) bash
 
-run-prod:
-	docker run -it -p 0.0.0.0:3000:3000  pasta script/server -e production
+run-dev: build
+	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) script/server
 
-debug-v.2alpha:
-	docker run -it palladius/pasta:v0.2alpha bash
+run-prod: build
+	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) script/server -e production
 
 docker-images:
-	docker images | grep pasta
+	docker images | grep ricniftystore
 
 versions:
 	ruby -v 
@@ -38,7 +37,7 @@ tag-and-push: build
 ##############################################################################
 
 #run-v1.1-p3000:
-#	docker run -p 3000:3000 -ti palladius/pasta:v1.1
+#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1
 
 #debug-v1.1-p3000:
-#	docker run -p 3000:3000 -ti palladius/pasta:v1.1 bash
+#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1 bash

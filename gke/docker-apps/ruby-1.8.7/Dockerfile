@@ -2,6 +2,9 @@
 
 FROM ubuntu:16.04
 
+# With some help let's be clear!
+MAINTAINER Riccardo Carlesso <riccardo.carlesso@gmail.com>
+
 WORKDIR /root
 
 RUN apt update
@@ -12,9 +15,6 @@ RUN apt build-dep -y ruby-sqlite3
 # This fails :/ so I'll install the package without sources I'm afraid.
 #RUN apt build-dep -y ruby2.3  
 RUN apt install -y ruby2.3
-
-# MECAB: https://code.google.com/archive/redirect/a/code.google.com/p/mecab?movedTo=http:%2F%2Ftaku910.github.io%2Fmecab%2F
-# Some japanese text2speech analyzer - not interested.
 
 ENV PATH /root/.rbenv/shims:$PATH
 RUN rbenv install 1.8.7-p375
