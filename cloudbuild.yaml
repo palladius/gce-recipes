@@ -1,58 +1,24 @@
+# https://cloud.google.com/container-builder/docs/tutorials/creating-a-custom-build-step
 steps:
-####################################################################
-# 1A. Steps - Java Dataflow
-####################################################################
-#- name: 'gcr.io/cloud-builders/java/mvn'
-#  args: ['--batch-mode', 'versions:set', '-DnewVersion=$TAG_NAME']
-#  dir: 'scannell/java'
-
-#- name: 'gcr.io/cloud-builders/java/mvn'
-#  args: ['--batch-mode', 'package']
-#  dir: 'scannell/java'
-
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '--tag=gcr.io/$PROJECT_ID/dataflow-java-demo', '--build-arg=VERID=$TAG_NAME', '.']
-#  dir: 'scannell/java'
-
-# Copy it if you need to
-#- name: gcr.io/cloud-builders/gsutil
-#  args: ['cp', 'java/target/dataflow-java-demo-$TAG_NAME.jar', 'gs://us-central1-airflow-test-48936580-bucket/dags/runners/']
-
-####################################################################
-# 1B. Steps - Python Dataflow
-####################################################################
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '--tag=gcr.io/$PROJECT_ID/dataflow-python-demo', '--build-arg=VERID=$TAG_NAME', '.']
-#  dir: 'scannell/python'
-
-####################################################################
-# 1C. Steps - Bash and random shit
-####################################################################
-#- name: 'ubuntu'
-#  args: ['bash', './myscript.bash']
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '-t', 'gcr.io/$PROJECT_ID/custom-script-test', '.']
-
-################################
-# 1D. Google official docs: https://cloud.google.com/container-builder/docs/tutorials/creating-a-custom-build-step
-#- name: 'ubuntu'
-#  args: ['bash', './myscript.bash']
-#  dir: 'riccardo/provina'
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '-t', 'gcr.io/$PROJECT_ID/custom-script-test', '--build-arg=VERID=$TAG_NAME', '.']
-#  dir: 'riccardo/provina'
-
-# Custom builds
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/autobuild-ruby187', '--build-arg=VERID=$TAG_NAME', '.']
   dir: 'gke/docker-apps/ruby-1.8.7/'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/autobuild-ubuhello', '--build-arg=VERID=$TAG_NAME', '.']
   dir: 'gke/docker-apps/ubuntu-hello/'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/autobuild-niftystore', '--build-arg=VERID=$TAG_NAME', '.']
+  dir: 'gke/docker-apps/ricniftystore/'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/auto-pasta', '--build-arg=VERID=$TAG_NAME', '.']
+  dir: 'gke/docker-apps/pasta/'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/auto-addressbook', '--build-arg=VERID=$TAG_NAME', '.']
+  dir: 'gke/docker-apps/ric_addressbook/'
 
-####################################################################
-# 2. Final images
-####################################################################
-images: 
-  - 'gcr.io/$PROJECT_ID/autobuild-ubuhello'
+images:
+  - 'gcr.io/$PROJECT_ID/auto-addressbook'
+  - 'gcr.io/$PROJECT_ID/auto-pasta'
+  - 'gcr.io/$PROJECT_ID/autobuild-niftystore'
   - 'gcr.io/$PROJECT_ID/autobuild-ruby187'
+  - 'gcr.io/$PROJECT_ID/autobuild-ubuhello'
