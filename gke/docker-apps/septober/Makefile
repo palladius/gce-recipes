@@ -15,6 +15,7 @@ $(APPNAME)-files:
 	git clone $(CODEURL) $(APPNAME)-files
 
 build: $(APPNAME)-files
+	@echo "If not ruby image present, try: cd ../ruby-1.8.7/ && make build"
 	docker build -t $(APPNAME) .
 
 run-local: build
