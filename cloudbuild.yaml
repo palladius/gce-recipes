@@ -1,4 +1,5 @@
 # https://cloud.google.com/container-builder/docs/tutorials/creating-a-custom-build-step
+# Inspired by Mark Scannel: https://source.developers.google.com/p/ric-cccwiki/r/dataflow-starter-flows
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/autobuild-ruby187', '--build-arg=VERID=$TAG_NAME', '.']

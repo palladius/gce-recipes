@@ -1,0 +1,18 @@
+[submodule "repoz/pasta"]
+	path = repoz/pasta
+	url = https://github.com/palladius/pasta
+[submodule "repoz/sakura"]
+	path = repoz/sakura
+	url = https://github.com/palladius/sakura
+[submodule "repoz/septober"]
+	path = repoz/septober
+	url = https://github.com/palladius/septober
+[submodule "repoz/addressbook"]
+	path = repoz/addressbook
+	url = https://github.com/palladius/addressbook
+[submodule "repoz/orgie"]
+	path = repoz/orgie
+	url = https://github.com/palladius/orgie
+[submodule "repoz/riccardo_nifty_store"]
+	path = repoz/riccardo_nifty_store
+	url = https://github.com/palladius/riccardo_nifty_store
