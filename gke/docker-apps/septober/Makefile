@@ -5,6 +5,9 @@ PRIVATEDB = /bin/false
 # much before but..
 MAKEFILE_DATE = "20171206"
 CODEURL = https://github.com/palladius/septober
+GAE_PROJECT_ID = 'septober-184814'
+GAE_PROJECT_NUMBER = "614371884085"
+
 # https://hub.docker.com/r/palladius/pasta/
 # code: https://github.com/palladius/septober
 # broken: http://septober.heroku.com
@@ -48,3 +51,7 @@ debug-v1.2-manhause-prod:
 # Looks like 2.0 doesnt work
 #debug-v2.0-manhause-nonva:
 #	docker run -p 3007:3000 palladius/septober:v2.0 /dockerize/run.sh
+
+push-to-flex:
+	@echo this doesnt work simply as it requires a PUBLIC ruby187 Docker image. TODO ricc push to 
+	gcloud --project $(GAE_PROJECT_ID) app deploy
