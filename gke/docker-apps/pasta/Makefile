@@ -2,7 +2,8 @@
 VERSION = $(shell cat VERSION)
 APPNAME = pasta
 PRIVATEDB = /bin/false
-
+# much before but..
+MAKEFILE_DATE = "20171206"
 # https://hub.docker.com/r/palladius/pasta/
 
 pasta-files: 
