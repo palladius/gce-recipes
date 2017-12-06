@@ -37,8 +37,8 @@ tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
 
 push-to-flex:
-	@echo this doesnt work simply as it requires a PUBLIC ruby187 Docker image. TODO ricc push to 
 	gcloud --project $(GAE_PROJECT_ID) app deploy
+	@echo "If everything is ok try this: https://pasta-188214.appspot.com"
 
 gae-push: push-to-flex
 
