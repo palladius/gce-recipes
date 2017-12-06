@@ -1,4 +1,5 @@
-FROM ruby-1.8.7 
+#FROM ruby-1.8.7 
+FROM palladius/ruby187
 
 COPY pasta-files/ /var/www/pasta/
 
