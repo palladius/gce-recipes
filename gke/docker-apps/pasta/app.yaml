@@ -1,0 +1,3 @@
+runtime: custom
+env: flex
+# copied from https://github.com/GoogleCloudPlatform/appengine-custom-runtimes-samples/blob/master/nginx/app.yaml

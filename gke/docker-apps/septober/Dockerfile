@@ -1,4 +1,7 @@
-FROM ruby-1.8.7 
+# LOCAL: FROM ruby-1.8.7 # doesnt work in automated workflows :(
+# REMOTE from: https://hub.docker.com/r/palladius/ruby187/tags/
+
+FROM palladius/ruby187
 
 COPY septober-files/ /var/www/septober/
 
