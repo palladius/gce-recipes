@@ -1,6 +1,6 @@
 
 
-call-them-all: gcs-monitor gcs-wordcount hello
+call-them-all: gcs-monitor gcs-wordcount http-hello
 	@yellow "Calling all GCF tests I have here.."
 
 gcs-monitor:
@@ -9,5 +9,5 @@ gcs-monitor:
 gcs-wordcount:
 	cd gcs-wordcount && make call-wordcount
 
-hello:
-	cd helloworld && make trigger
+http-hello:
+	cd helloworld && make curl && make trigger

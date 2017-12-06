@@ -30,7 +30,6 @@ function getFileStream (file) {
   if (!file.name) {
     throw new Error('Filename not provided. Make sure you have a "name" property in your request');
   }
-
   return storage.bucket(file.bucket).file(file.name).createReadStream();
 }
 
@@ -48,6 +47,12 @@ function getFileStream (file) {
  * @param {function} The callback function.
  */
 exports.wordCount = function (event, callback) {
+
+  console.log('1. I am a log entry! riccardo fuing! Siamo dentro la wordCount: bazza!');
+  //console.log("2. Evento: "+ JSON.stringify(obj)); // https://stackoverflow.com/questions/957537/how-can-i-display-a-javascript-object
+  console.log(event); // try also str = JSON.stringify(obj);
+  console.log('3. Event Data: ' + event.data );
+
   const file = event.data;
 
   if (file.resourceState === 'not_exists') {

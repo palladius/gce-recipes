@@ -1,9 +1,9 @@
 {
-  "name": "nodejs-docs-samples-functions-cloud-storage",
-  "version": "0.0.1",
+  "name": "gce-recipes",
+  "version": "0.0.2",
   "private": true,
   "license": "Apache-2.0",
-  "author": "Google Inc.",
+  "author": "Riccardo C. by copying from Google Inc.",
   "repository": {
     "type": "git",
     "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
