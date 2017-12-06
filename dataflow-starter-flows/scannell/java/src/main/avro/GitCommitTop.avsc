@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "GitCommitTop",
+  "namespace": "com.google.cloud.pso.data",
+  "fields" : [ {
+    "name" : "email",
+    "type" : [ "string" ]
+  }, {
+    "name" : "count",
+    "type" : [ "long" ]
+  } ]
+}

@@ -1,0 +1,137 @@
+{
+  "type" : "record",
+  "name" : "GitCommitRecord",
+  "namespace": "com.google.cloud.pso.data",
+  "fields" : [ {
+    "name" : "commit",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "tree",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "parent",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    }
+  }, {
+    "name" : "author",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Author",
+      "namespace" : "root",
+      "fields" : [ {
+        "name" : "name",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "email",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "time_sec",
+        "type" : [ "null", "long" ]
+      }, {
+        "name" : "tz_offset",
+        "type" : [ "null", "long" ]
+      }, {
+        "name" : "date",
+        "type" : [ "null", "long" ]
+      } ]
+    } ]
+  }, {
+    "name" : "committer",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Committer",
+      "namespace" : "root",
+      "fields" : [ {
+        "name" : "name",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "email",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "time_sec",
+        "type" : [ "null", "long" ]
+      }, {
+        "name" : "tz_offset",
+        "type" : [ "null", "long" ]
+      }, {
+        "name" : "date",
+        "type" : [ "null", "long" ]
+      } ]
+    } ]
+  }, {
+    "name" : "subject",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "message",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "trailer",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "Trailer",
+        "namespace" : "root",
+        "fields" : [ {
+          "name" : "key",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "value",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "email",
+          "type" : [ "null", "string" ]
+        } ]
+      }
+    }
+  }, {
+    "name" : "difference",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "Difference",
+        "namespace" : "root",
+        "fields" : [ {
+          "name" : "old_mode",
+          "type" : [ "null", "long" ]
+        }, {
+          "name" : "new_mode",
+          "type" : [ "null", "long" ]
+        }, {
+          "name" : "old_path",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "new_path",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "old_sha1",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "new_sha1",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "old_repo",
+          "type" : [ "null", "string" ]
+        }, {
+          "name" : "new_repo",
+          "type" : [ "null", "string" ]
+        } ]
+      }
+    }
+  }, {
+    "name" : "difference_truncated",
+    "type" : [ "null", "boolean" ]
+  }, {
+    "name" : "repo_name",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    }
+  }, {
+    "name" : "encoding",
+    "type" : [ "null", "string" ]
+  } ]
+}
