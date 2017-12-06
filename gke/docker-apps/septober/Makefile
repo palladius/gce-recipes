@@ -38,9 +38,12 @@ tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
 
 # only used with 5yr-old distros.. see https://hub.docker.com/r/palladius/septober/
-debug-v1-manhaus:
-	docker run -it palladius/septober:v1 "cd /home/riccardo/git/septober/ && make run"
+debug-v1-manhaus-dev:
+	docker run -p 3007:3000 -it palladius/septober:v1 "cd /home/riccardo/git/septober/ && make run"
 
-debug-v1.2-manhause:
-	docker run -p 80:3000 palladius/septober:v1.2 
+debug-v1.2-manhause-prod:
+	docker run -p 3007:3000 palladius/septober:v1.2 
 
+# Looks like 2.0 doesnt work
+#debug-v2.0-manhause-nonva:
+#	docker run -p 3007:3000 palladius/septober:v2.0 /dockerize/run.sh
