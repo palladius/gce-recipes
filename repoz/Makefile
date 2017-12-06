@@ -8,7 +8,8 @@ dont-run-me-once-for-all:
 	git submodule add https://github.com/palladius/sakura
 	git submodule add https://github.com/palladius/septober
 	git submodule add https://github.com/palladius/addressbook
-	git submodule add https://github.com/palladius/orgie
+	#git submodule add https://github.com/palladius/orgie
 	git submodule add https://github.com/palladius/riccardo_nifty_store
+	git submodule add https://github.com/palladius/goliardia
 
 

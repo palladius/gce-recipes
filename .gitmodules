@@ -16,3 +16,6 @@
 [submodule "repoz/riccardo_nifty_store"]
 	path = repoz/riccardo_nifty_store
 	url = https://github.com/palladius/riccardo_nifty_store
+[submodule "repoz/goliardia"]
+	path = repoz/goliardia
+	url = https://github.com/palladius/goliardia
