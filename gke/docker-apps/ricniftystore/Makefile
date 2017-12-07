@@ -1,7 +1,7 @@
 
 VERSION = $(shell cat VERSION)
 APPNAME = ricniftystore
-PRIVATEDB = /bin/false
+PRIVATEDB = /bin/true
 LOCAL_PORT = 3002
 
 ricniftystore-files: 
@@ -32,12 +32,5 @@ versions:
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
 
-##############################################################################
-# THESE WORK but I'm working ona  repeatable working pipeline.. bear with me.
-##############################################################################
-
-#run-v1.1-p3000:
-#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1
-
-#debug-v1.1-p3000:
-#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1 bash
+fix-permissions:
+	sudo chown -R ricc /home/ricc/.config/
