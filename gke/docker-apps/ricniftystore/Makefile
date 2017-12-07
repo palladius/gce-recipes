@@ -4,10 +4,10 @@ APPNAME = ricniftystore
 PRIVATEDB = /bin/false
 LOCAL_PORT = 3002
 
-$(APPNAME)-files: 
+ricniftystore-files: 
 	git clone https://github.com/palladius/riccardo_nifty_store $(APPNAME)-files
 
-build: $(APPNAME)-files
+build: ricniftystore-files
 	docker build -t $(APPNAME) .
 
 run-local: build

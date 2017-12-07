@@ -1,18 +1,19 @@
+# Synopsis
 
-docker repo: https://hub.docker.com/r/palladius/pasta/
 
 
-# Hack
+# PROD
 
-docker run -it palladius/pasta:v0.2alpha bash
+per farlo andare in prod serve MySQL. 
+Gna faccio, ho bisogno di altro.
 
-cd /root/git/pasta
-echo rake / bundler / hack...
-Try this:
+proviamo
+echo "gem 'activerecord-mysql2-adapter'" >> Gemfile
 
-$ docker run -p 3000:3000 -ti palladius/pasta:v1.1
-$ cd /root/git/pasta
-$ RAILS_ENV=production script/server
+https://www.digitalocean.com/community/tutorials/how-to-use-mysql-with-your-ruby-on-rails-application-on-ubuntu-14-04
 
-open http://localhost:3000/sauces
+parrebbe servano anche 
 
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+
+gem install mysql2
