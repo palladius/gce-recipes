@@ -18,7 +18,7 @@
 // [START functions_word_count_setup]
 const Storage = require('@google-cloud/storage');
 const readline = require('readline');
-
+const Version = "1.0.4";
 // Instantiates a client
 const storage = Storage();
 // [END functions_word_count_setup]
@@ -47,11 +47,11 @@ function getFileStream (file) {
  * @param {function} The callback function.
  */
 exports.wordCount = function (event, callback) {
-
-  console.log('1. I am a log entry! riccardo fuing! Siamo dentro la wordCount: bazza!');
+  console.log('1. Hi Im a GCF HTTP.wordCount() v.'+Version+': bazza!');
   //console.log("2. Evento: "+ JSON.stringify(obj)); // https://stackoverflow.com/questions/957537/how-can-i-display-a-javascript-object
   console.log(event); // try also str = JSON.stringify(obj);
   console.log('3. Event Data: ' + event.data );
+  console.log(event.data); // try also str = JSON.stringify(obj);
 
   const file = event.data;
 

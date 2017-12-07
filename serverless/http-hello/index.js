@@ -5,7 +5,19 @@
  * @param {Object} res Cloud Function response context.
  */
 
-const version = '1.0';
+const version = '1.1';
+
+function readTextFile(filename) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", filename, true);
+  rawFile.onreadystatechange = function() {
+    if (rawFile.readyState === 4) {
+      var allText = rawFile.responseText;
+      document.getElementById("textSection").innerHTML = allText;
+    }
+  }
+  rawFile.send();
+}
 
 exports.helloWorldHttp = function helloWorldHttp (req, res) {
   if (req.body.message === undefined) {
@@ -26,5 +38,10 @@ exports.helloWorldHttp = function helloWorldHttp (req, res) {
  * @param {Object} res Cloud Function response context.
  */
 exports.helloGET = function helloGET (req, res) {
-  res.send('Hello World v.'+version+'!');
+  res.send('Hello World v.'+version+'!\n');
+};
+
+exports.helloGET2 = function helloGET2 (req, res) {
+  const file_version = readTextFile("VERSION");
+  res.send('Hello World v.'+file_version+'!\n');
 };

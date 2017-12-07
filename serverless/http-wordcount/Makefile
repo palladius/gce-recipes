@@ -16,6 +16,9 @@ TEST_PAYLOAD = '{"bucket": "$(BUCKET_NAME)","file":"sample.txt"}'
 call-wordcount:
 	gcloud alpha functions call $(FUNCTION_NAME) --data '{"bucket": "$(BUCKET_NAME)","file":"sample.txt"}'
 
+call-wordcount-beta:
+	gcloud beta functions call $(FUNCTION_NAME) --data '{"bucket": "$(BUCKET_NAME)","file":"sample.txt"}'
+
 curl:
 	@echo Try: curl -X POST https://$(YOUR_REGION)-$(PROJECT_ID).cloudfunctions.net/$(FUNCTION_NAME) -H "Content-Type:application/json" --data $(TEST_PAYLOAD)
 
@@ -27,4 +30,4 @@ setup-once:
 	gsutil cp sample.txt gs://$(BUCKET_NAME)/
 
 logs:
-	gcloud beta functions logs read $(FUNCTION_NAME)
+	gcloud beta functions logs read $(FUNCTION_NAME) | tee logs.txt

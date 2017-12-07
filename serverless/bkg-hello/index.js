@@ -5,7 +5,10 @@
  * @param {object} event The Cloud Functions event.
  * @param {function} callback The callback function.
  */
-exports.helloBackground = function helloBackground (event, callback) {
+exports.helloBackgroundBroken = function helloBackgroundBroken (event, callback) {
+  console.log(`[nkg-hello] helloBackground: event.data=${event.data}`);
+  console.log(`[nkg-hello] helloBackground: about to log the whole event object, id=${event.eventId}!`);
+  console.log(event);
   callback(null, `Ma ciao ${event.data.name || 'World'}!`);
 };
 

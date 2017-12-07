@@ -18,8 +18,13 @@ curl:
 trigger:
 	@echo "TODO ricc publish something on HTTP: $(FUNCTION_NAME)"
 	#curl -X POST -H "Content-Type:application/json"  -d '{"message":"hello world!"}' YOUR_HTTP_TRIGGER_ENDPOINT
-	curl "https://$(MYREGION)-$(PROJECT_ID).cloudfunctions.net/$(FUNCTION2)"
+	curl https://us-central1-ric-cccwiki.cloudfunctions.net/helloGET
+	curl https://us-central1-ric-cccwiki.cloudfunctions.net/helloGET2
 
-deploy-both:
+deploy-all:
 	gcloud beta functions deploy $(FUNCTION_NAME) --stage-bucket $(BUCKET_NAME) --trigger-http 
 	gcloud beta functions deploy helloGET --stage-bucket $(BUCKET_NAME) --trigger-http
+	gcloud beta functions deploy helloGET2 --stage-bucket $(BUCKET_NAME) --trigger-http
+
+cleanup:
+	gcloud beta functions delete helloGET helloGET2 $(FUNCTION_NAME)
