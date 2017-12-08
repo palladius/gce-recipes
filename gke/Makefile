@@ -21,3 +21,4 @@ run-proxy:
 	kubectl proxy
 
 show: status
+list: status
