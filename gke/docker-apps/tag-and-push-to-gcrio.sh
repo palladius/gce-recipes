@@ -1,14 +1,13 @@
 #!/bin/bash
 
-VERSION=1.2
+VERSION=1.2a
 
 IMAGE_NAME=${1:-sobenme}
 IMAGE_VERSION=${2:-0.0.1alpha}
 
-#GCLOUD="sudo /usr/local/google-cloud-sdk/bin/gcloud"
 GCLOUD="gcloud"
 
-#set -x
+set -x
 #set -e
 
 echo "1. Forcing latest to be latest BUT not forcing the VERSION so you only do it once ideally (immutable)"
