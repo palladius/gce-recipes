@@ -10,13 +10,13 @@ ricniftystore-files:
 build: ricniftystore-files
 	docker build -t $(APPNAME) .
 
-run-local: build
+run-local-bash: build
 	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) bash
 
-run-dev: build
+run-local-dev: build
 	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) script/server
 
-run-prod: build
+run-local-prod: build
 	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) script/server -e production
 
 docker-images:
