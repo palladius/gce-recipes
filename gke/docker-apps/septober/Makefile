@@ -7,26 +7,27 @@ MAKEFILE_DATE = "20171206"
 CODEURL = https://github.com/palladius/septober
 GAE_PROJECT_ID = 'septober-184814'
 GAE_PROJECT_NUMBER = "614371884085"
+LOCALPORT = 3005
 
-# https://hub.docker.com/r/palladius/pasta/
 # code: https://github.com/palladius/septober
 # broken: http://septober.heroku.com
-
-septober-files: $(APPNAME)-files 
 
 $(APPNAME)-files:
 	git clone $(CODEURL) $(APPNAME)-files
 
 build: $(APPNAME)-files
-	@echo "If not ruby image present, try: cd ../ruby-1.8.7/ && make build"
+	# not true anymore since I use the palladius/ one. 
+	# @echo "If not ruby image present, try: cd ../ruby-1.8.7/ && make build"
 	docker build -t $(APPNAME) .
 
-run-local: build
-	docker run -it -p 0.0.0.0:3000:3000 $(APPNAME) bash
+run-local-bash: build
+	docker run -it -p 0.0.0.0:$(LOCALPORT):3000 $(APPNAME) bash
 
-run-prod:
-	docker run -it -p 0.0.0.0:3000:3000  pasta script/server -e production
+run-local-prod:
+	docker run -it -p 0.0.0.0:$(LOCALPORT):3000 $(APPNAME) rails server -e production
 
+run-local-dev:
+	docker run -it -p 0.0.0.0:$(LOCALPORT):3000 $(APPNAME) rails server
 
 docker-images:
 	docker images | grep $(APPNAME)

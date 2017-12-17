@@ -11,6 +11,7 @@ RUN apt-get -y install libgmp-dev git
 RUN rbenv local 1.8.7-p375
 RUN gem install bundler -v 1.16.0 --no-rdoc --no-ri
 ##RUN gem install hobo -v 1.0  --no-rdoc --no-ri
+#RUN gem install ZenTest -v '4.7.0'
 RUN /root/.rbenv/versions/1.8.7-p375/bin/bundle install
 #RUN rake db:seed
 
