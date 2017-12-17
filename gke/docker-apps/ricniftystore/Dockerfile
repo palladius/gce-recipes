@@ -31,4 +31,4 @@ RUN cp db/development.sqlite3 db/production.sqlite3
 EXPOSE 3000
 
 # run in DEV :) (not prod). Maybe I should change it to prod by dflt since it has MySQL installed now?
-CMD ["script/server", "-b", "0.0.0.0"]
+CMD ["script/server", "-b", "0.0.0.0", "-e", "production"]
