@@ -34,3 +34,17 @@ tag-and-push: build
 
 fix-permissions:
 	sudo chown -R ricc /home/ricc/.config/
+
+##############################################################################
+# THESE WORK but I'm working ona  repeatable working pipeline.. bear with me.
+##############################################################################
+
+#run-v1.1-p3000:
+#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1
+
+#debug-v1.1-p3000:
+#	docker run -p 3000:3000 -ti palladius/ricniftystore:v1.1 bash
+
+# CREATE the Prod database once:
+#RAILS_ENV=production rake db:create
+#RAILS_ENV=production rake db:seed
