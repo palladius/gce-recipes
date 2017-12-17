@@ -2,6 +2,8 @@
 VERSION = $(shell cat VERSION)
 APPNAME = riclife
 PRIVATEDB = /bin/true
+FUNGE = funge
+
 
 list:
 	@cat Makefile
@@ -19,7 +21,7 @@ build: $(APPNAME)-files riclife-files/config/smtp_gmail.yml
 run: build
 	docker run $(APPNAME)  
 
-debug: build
+run-debug: build
 	docker run -it $(APPNAME) bash
 
 run-p3009: build
@@ -35,7 +37,6 @@ tag-and-push: build
 # $ docker commit -m "fixed rubies n stuff a manhouse" -a "A N Other" `docker ps -l -q` riclife:funge2
 #sha256:57bee1f9ad6d6302d234a415587e33eb65210a091e2f8d8d73c931dd431c73b6
 # https://docs.oracle.com/cd/E77565_01/E75728/html/section_c5q_n2z_fp.html
-FUNGE = funge
 tag-and-push-funge:
 	docker commit -m "fixed ruby and bundler a manouse" -a "A N Other"   `docker ps -l -q` riclife:$(FUNGE)	
 	docker tag riclife:$(FUNGE) gcr.io/ric-cccwiki/riclife:$(FUNGE)

@@ -1,5 +1,5 @@
-# Defined in ../ruby-1.8.7/ ==> wOt?!??
-FROM ruby-1.8.7 
+#FROM ruby-1.8.7 # Defined in ../ruby-1.8.7/ ==> wOt?!??
+FROM palladius/ruby187
 
 MAINTAINER Riccardo Carlesso <riccardo.carlesso@gmail.com>
 
