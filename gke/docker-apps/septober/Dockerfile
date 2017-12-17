@@ -4,10 +4,12 @@
 FROM palladius/ruby187
 
 COPY septober-files/ /var/www/septober/
+COPY private/config/database.yml /var/www/septober/config/
 
 WORKDIR /var/www/septober/
 
 RUN apt-get -y install libgmp-dev git
+RUN apt-get -y install mysql-client libmysqlclient-dev
 RUN rbenv local 1.8.7-p375
 RUN gem install bundler -v 1.16.0 --no-rdoc --no-ri
 ##RUN gem install hobo -v 1.0  --no-rdoc --no-ri
