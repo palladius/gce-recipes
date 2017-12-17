@@ -3,10 +3,9 @@ FROM palladius/ruby187
 
 MAINTAINER Riccardo Carlesso <riccardo.carlesso@gmail.com>
 
-COPY riclife-files/* /var/www/riclife/
-COPY private/config/database.yml /var/www/riclife/config/
-
-# TODO Use SECRETS to get USER and PASS
+COPY private/*                   /var/www/riclife/
+COPY riclife-files/*             /var/www/riclife/
+#COPY private/config/database.yml /var/www/riclife/config/
 
 WORKDIR /var/www/riclife/
 

@@ -1,0 +1,32 @@
+development:
+    key: 657520970ae15446b19bb31ec998f9f1
+    secret: 6a70d95253b3233db11a26e8b79ec2ea
+    canvas_path: /fbprova2/
+    callback_path: /path/to/your/callback/
+    tunnel:
+      username: riccardo
+      host: www.palladius.eu
+      port: 1234
+      local_port: 5678
+
+test:
+    key: 657520970ae15446b19bb31ec998f9f1
+    secret: 6a70d95253b3233db11a26e8b79ec2ea
+    canvas_path: /fbprova2/
+    callback_path: /path/to/your/callback/
+    tunnel:
+      username: yourLoginName
+      host: www.yourexternaldomain.com
+      port: 1234
+      local_port: 5678
+
+production:
+    key: 657520970ae15446b19bb31ec998f9f1
+    secret: 6a70d95253b3233db11a26e8b79ec2ea
+    canvas_path: /fbprova2/
+    callback_path: /path/to/your/callback/
+    tunnel:
+      username: yourLoginName
+      host: www.yourexternaldomain.com
+      port: 1234
+      local_port: 5678

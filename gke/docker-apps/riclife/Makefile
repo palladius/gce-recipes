@@ -8,14 +8,14 @@ FUNGE = funge
 list:
 	@cat Makefile
 
-riclife-files/config/smtp_gmail.yml:
-	@echo If this fails you need to create one yourself and put into secrets taking inspiration from smtp_gmail.yml.example file.
-	cp secrets/smtp_gmail.yml riclife-files/config/smtp_gmail.yml
+#riclife-files/config/smtp_gmail.yml:
+#	@echo If this fails you need to create one yourself and put into secrets taking inspiration from smtp_gmail.yml.example file.
+#	cp secrets/smtp_gmail.yml riclife-files/config/smtp_gmail.yml
 
 riclife-files: 
 	git clone https://github.com/palladius/riclife $(APPNAME)-files
 
-build: $(APPNAME)-files riclife-files/config/smtp_gmail.yml
+build: $(APPNAME)-files 
 	docker build -t $(APPNAME) .
 
 run: build
