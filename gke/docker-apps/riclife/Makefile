@@ -3,7 +3,7 @@ VERSION = $(shell cat VERSION)
 APPNAME = riclife
 PRIVATEDB = /bin/true
 FUNGE = funge
-
+LOCAL_PORT = 3009
 
 list:
 	@cat Makefile
@@ -21,14 +21,14 @@ build: $(APPNAME)-files
 run: build
 	docker run $(APPNAME)  
 
-run-debug: build
-	docker run -it $(APPNAME) bash
+run-local-debug: build
+	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) bash
 
 run-p3009: build
-	docker run -p 3009:80 $(APPNAME)
+	docker run -p $(LOCAL_PORT):80 $(APPNAME)
 
-debug-p3009: build
-	docker run -p 3009:80 -it $(APPNAME) bash
+run-debug-p$(LOCAL_PORT): build
+	docker run -p $(LOCAL_PORT):80 -it $(APPNAME) bash
 
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
