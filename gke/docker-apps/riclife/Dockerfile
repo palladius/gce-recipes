@@ -16,6 +16,7 @@ RUN apt -y install mysql-client libmysqlclient-dev
 WORKDIR /var/www/riclife/
 
 RUN rbenv local 1.8.7-p375
+# TODO(ricc): I believe this is POINTLESS. Try removing it
 RUN gem install bundler -v 1.16.0 --no-rdoc --no-ri
 # Needed to run in production with MySQL
 RUN gem install activerecord-mysql2-adapter --no-rdoc --no-ri
