@@ -48,3 +48,6 @@ tag-and-push-funge:
 run-from-cloud-funge:
 	@echo If it funge pls try: /root/riclife/script/server or console or dbconsole
 	docker run -it gcr.io/ric-cccwiki/riclife:$(FUNGE) bash # try /root/
+
+run-once-on-prod-mysql:
+	./run-once-on-prod-mysql.sh
