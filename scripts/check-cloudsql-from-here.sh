@@ -5,7 +5,7 @@
 echo "SHOW DATABASES ;" | mysql -u root -pezc0xGPCFJDBIaP5 -h 35.198.182.127
 
 for DB in cat_list_rails_speckle gogliardia pasta riclife ricniftystore septober ; do
-	echo "= Tables in $DB ="
-	echo "USE $DB; SHOW TABLES ;" | mysql -u root -pezc0xGPCFJDBIaP5 -h 35.198.182.127 2>/dev/null
+	echo -en "+ Tables in $DB: "
+	echo "USE $DB; SHOW TABLES ;" | mysql -u root -pezc0xGPCFJDBIaP5 -h 35.198.182.127 2>/dev/null | wc -l
 done
 
