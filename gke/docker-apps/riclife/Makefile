@@ -24,11 +24,14 @@ run: build
 run-local-debug: build
 	docker run -it -p 0.0.0.0:$(LOCAL_PORT):3000 $(APPNAME) bash
 
-run-p3009: build
-	docker run -p $(LOCAL_PORT):80 $(APPNAME)
+run-p$(LOCAL_PORT)-dev: build
+	docker run -p $(LOCAL_PORT):80 $(APPNAME) script/server
 
-run-debug-p$(LOCAL_PORT): build
-	docker run -p $(LOCAL_PORT):80 -it $(APPNAME) bash
+run-p$(LOCAL_PORT)-prod: build
+	docker run -p $(LOCAL_PORT):80 $(APPNAME) RAILS_ENV=production script/server
+
+#run-debug-p$(LOCAL_PORT): build
+#	docker run -p $(LOCAL_PORT):80 -it $(APPNAME) bash
 
 tag-and-push: build
 	../tag-and-push-to-gcrio.sh $(APPNAME) $(VERSION)
