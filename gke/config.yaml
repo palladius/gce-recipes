@@ -1,0 +1,14 @@
+#config.yaml
+# idea is to autopush these images with a single command. TODO to be implemented yet.
+environments:
+  buridone:
+    - hello-app  # ??
+    - nodejs-app # node JS
+    - quickstart-image # Flex/Python/Flask ?
+    - pasta
+    - ricniftystore
+  riccardume:
+    - septpober-ng
+  production:
+    - 
+
