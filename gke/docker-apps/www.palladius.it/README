@@ -3,6 +3,7 @@
 
 joomla version: 3.8.2
 
+Docker image info: https://hub.docker.com/_/joomla/
 
 # docker-compose
 
@@ -11,3 +12,22 @@ Figatissima! Guarda quello nella subdir di qui (funge!) con MySQL+PHPMYadmin+Joo
 Prova anche questo (non testato yet): https://github.com/Fabrik/Joomla-35-php7-docker-compose/blob/master/docker-compose.yml
 
 Prova anche Bitnami Joomla: https://hub.docker.com/r/bitnami/joomla/
+
+# Cos ho fatto
+
+Ho usato l'immagine docker di Jumla (3.8) e poi ho provato a farle puntare al mio dB.
+Gno fatta.
+Allora ho creato un nuovo utente e un nuovo DB e ho creato una nuova installazione di Jumla3 che punti
+al DB vergine per sperimentare come funziona.
+
+Utente Admin: palladius // Jumla3NewPwd
+
+Credo che se vuoi usare ilo tuo file di configuraszione e le tue pippe, forse conviene creare un Dockerfile che prende 
+il config.php e forse i file originali e copia il config.php dentro al jumla originale e magari reimuove l'admin
+e vediamo se funge.
+
+
+docker compose:
+
+ 2266  git clone https://github.com/openenergyprojects/joomla-docker-inproduction 
+
