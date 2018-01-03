@@ -2,3 +2,12 @@
 # config
 
 joomla version: 3.8.2
+
+
+# docker-compose
+
+Figatissima! Guarda quello nella subdir di qui (funge!) con MySQL+PHPMYadmin+Joomla.
+
+Prova anche questo (non testato yet): https://github.com/Fabrik/Joomla-35-php7-docker-compose/blob/master/docker-compose.yml
+
+Prova anche Bitnami Joomla: https://hub.docker.com/r/bitnami/joomla/
