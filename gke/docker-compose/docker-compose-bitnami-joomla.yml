@@ -1,3 +1,5 @@
+# Scopiazzaed from: https://hub.docker.com/r/bitnami/joomla/
+
 version: '2'
 
 services:

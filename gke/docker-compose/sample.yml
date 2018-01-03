@@ -1,0 +1,18 @@
+# non so se vada
+# https://stackoverflow.com/questions/37845715/can-kubernetes-be-used-like-docker-compose
+
+# sample compose file with 3 services
+web:
+  image: nginx
+  ports:
+    - "80"
+    - "443"
+database:
+  image: postgres
+  ports:
+    - "5432"
+cache:
+  image: memcached
+  ports:
+    - "11211"
+

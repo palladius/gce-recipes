@@ -7,13 +7,14 @@ joomla:
   volumes:
     -  /srv/docker/smartprojects/joomla_www:/var/www/html
   environment:
-    JOOMLA_DB_PASSWORD: "CHANGE$This!"
+    JOOMLA_DB_PASSWORD: "Riccard0ne123"
   restart: always
 
 joomladb:
   image: mysql:5.6
   environment:
-    MYSQL_ROOT_PASSWORD: "CHANGE$This!"
+    MYSQL_ROOT_PASSWORD: "Riccard0ne123"
+    #STICAZZI: ${ip:port}
   volumes:
     - /srv/docker/smartprojects/mysql:/var/lib/mysql
   ports: #This is exposed in case you want to login to the mysql from the docker host. It is not mandatory to expose it.
@@ -33,3 +34,8 @@ phpmyadmin:
      - /srv/docker/smartprojects/phpmyadmin/sessions:/sessions
     links:
      - joomladb:mysql
+
+## FIGATA! Puoi anche aggiungere un build locale: https://stackoverflow.com/questions/30063907/using-docker-compose-how-to-execute-multiple-commands
+#riccardo-jumla:
+#  build: .
+#  command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
