@@ -1,0 +1,26 @@
+---
+  haproxy:    # https://hub.docker.com/r/bringnow/haproxy-letsencrypt/
+    image: bringnow/haproxy-letsencrypt:latest
+    ports:
+      - "80:80"
+      - "443:443"
+#    links:
+#      - reaction
+    environment:
+      - AUTH_PASS=$AUTH_PASS
+      - AUTH_USER=$AUTH_USER
+    volumes:
+      - "/etc/letsencrypt:/etc/letsencrypt"
+      - "/var/acme-webroot:/var/lib/haproxy/"
+      - "~/shop/haproxy/haproxy.cfg:/etc/haproxy/haproxy.cfg"    # https://github.com/camptocamp/docker-haproxy-luasec
+      #- "~/shop/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg"    # https://github.com/camptocamp/docker-haproxy-luasec
+    restart: always
+
+  certs_autorenewal_daily_check:
+    image: bringnow/letsencrypt-manager:latest
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - /var/acme-webroot:/var/acme-webroot
+    command: cron-auto-renewal
+    restart: always

@@ -38,3 +38,7 @@ joomla-version:
 
 $(APPNAME)-files:
 	git clone git@bitbucket.org:palladius/www.palladius.it.git $(APPNAME)-files
+
+docker-compose-up:
+	docker-compose -f docker-compose-joomla.yml up 
+
