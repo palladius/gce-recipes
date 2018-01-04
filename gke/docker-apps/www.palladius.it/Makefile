@@ -1,7 +1,6 @@
 
-
 VERSION = $(shell cat VERSION)
-APPNAME = www.palladius.it
+APPNAME = www.palladius.it-staging
 
 PALLADIUS_CONFIG = -e JOOMLA_DB_HOST="104.197.195.148:3306" -e JOOMLA_DB_USER="palladius-user" -e JOOMLA_DB_PASSWORD="SitoPersonaleSuSpeckle" -e JOOMLA_DB_NAME="palladiusdb" 
 BRANDNEW_CONFIG = TODO
@@ -12,11 +11,23 @@ BRANDNEW_CONFIG = TODO
 #build: $(APPNAME)-files
 #	docker build -t $(APPNAME) .  
 
-#run: build
-#	docker run $(APPNAME)  
+build:
+	docker build -t $(APPNAME) .  
 
-#debug: build
-#	docker run -it $(APPNAME) bash
+run: build
+	docker run -p 8080:80 $(APPNAME) 
+
+debug: build
+	docker run -it -p 8080:80 $(APPNAME) bash
+
+dockercompose-setup:
+	#mkdir -p /srv/docker/riccardojumlaproject/mysql
+	#mkdir -p /srv/docker/riccardojumlaproject/joomla_www
+	#mkdir -p /srv/docker/riccardojumlaproject/phpmyadmin/sessions
+	touch dockercompose-setup
+
+dockercompose-start-jumla-mysql-phpmyadmin: dockercompose-setup
+	docker-compose -f docker-compose-joomla.yml up 
 
 run-prova-del-cacchio:
 	docker run --name joomla-latest -d joomla

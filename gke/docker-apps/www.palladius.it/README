@@ -27,7 +27,9 @@ il config.php e forse i file originali e copia il config.php dentro al jumla ori
 e vediamo se funge.
 
 
-docker compose:
+docker compose
+==============
 
- 2266  git clone https://github.com/openenergyprojects/joomla-docker-inproduction 
+    git clone https://github.com/openenergyprojects/joomla-docker-inproduction 
 
+Note you can move compose to k8s automatiucally: https://stackoverflow.com/questions/37845715/can-kubernetes-be-used-like-docker-compose/39020233#39020233

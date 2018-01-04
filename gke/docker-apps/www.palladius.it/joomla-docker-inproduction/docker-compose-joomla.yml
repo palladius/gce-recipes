@@ -7,13 +7,13 @@ joomla:
   volumes:
     -  /srv/docker/smartprojects/joomla_www:/var/www/html
   environment:
-    JOOMLA_DB_PASSWORD: "CHANGE$This!"
+    JOOMLA_DB_PASSWORD: "CHANGE$This!Ricc4rd0ne"
   restart: always
 
 joomladb:
   image: mysql:5.6
   environment:
-    MYSQL_ROOT_PASSWORD: "CHANGE$This!"
+    MYSQL_ROOT_PASSWORD: "CHANGE$This!Ricc4rd0ne"
   volumes:
     - /srv/docker/smartprojects/mysql:/var/lib/mysql
   ports: #This is exposed in case you want to login to the mysql from the docker host. It is not mandatory to expose it.
