@@ -5,4 +5,4 @@
 
 build-compose:
 	docker-compose run web rails new . --force --database=postgresql
-	sudo chown -R $USER:$USER .
+	#sudo chown -R $USER:$USER .
