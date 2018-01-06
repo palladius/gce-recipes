@@ -1,8 +1,15 @@
 
 
-#clona:#
-#	git clone git@bitbucket.org:palladius/toy_app.git toy_app_files/
+# only run this once:
+# See https://docs.docker.com/compose/rails/#connect-the-database
+# $ docker-compose run web rails new . --force --database=postgresql
+# $ sudo chown -R $USER:$USER .
+# $ docker-compose build
+# change DB config for Postgres.
 
 build-compose:
-	docker-compose run web rails new . --force --database=postgresql
-	#sudo chown -R $USER:$USER .
+	docker-compose build
+
+
+run-compose:
+	docker-compose up
