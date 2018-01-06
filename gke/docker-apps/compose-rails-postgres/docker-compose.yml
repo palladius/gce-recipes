@@ -8,10 +8,19 @@ services:
     image: postgres
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec rails s -p ${PORT} -b '0.0.0.0'
+    environment:
+      - GIC=${GIC}
+      - FAKE_HOSTNAME="fake-${HOSTNAME}"
+      #- FAKE_HOSTNAM2="fake-$HOSTNAME"
+      - DEBUG=1
+      - ANSWER=42
+      - URL=${MUNCH_URL}
+      - TAG_FROM_DOT_ENV=${TAG}
+      - VERSION=${VERSION}
     volumes:
       - .:/myapp
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
     depends_on:
       - db

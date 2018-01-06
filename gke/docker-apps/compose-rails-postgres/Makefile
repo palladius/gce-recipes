@@ -16,7 +16,11 @@ run-compose:
 
 stop-compose:
 	docker-compose down
+	sudo rm tmp/pids/server.pid
 
-compose-add-scaffold:
-	docker-compose run web rails generate scaffold HighScore game:string score:integer
-	docker-compose run web rails db:migrate
+# non capisco perche' ma la migrazione e' QUI e' LOCALE quindi non devo tenerne conto in CLI
+# Figatissima!
+#compose-add-scaffold:
+#	# from: http://guides.rubyonrails.org/command_line.html
+#	docker-compose run web rails generate scaffold HighScore game:string score:integer
+#	docker-compose run web rails db:migrate
