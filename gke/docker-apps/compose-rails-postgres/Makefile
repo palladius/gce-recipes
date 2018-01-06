@@ -13,3 +13,10 @@ build-compose:
 
 run-compose:
 	docker-compose up
+
+stop-compose:
+	docker-compose down
+
+compose-add-scaffold:
+	docker-compose run web rails generate scaffold HighScore game:string score:integer
+	docker-compose run web rails db:migrate
