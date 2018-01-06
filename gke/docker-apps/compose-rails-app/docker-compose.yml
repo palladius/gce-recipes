@@ -1,7 +1,8 @@
 
 # from https://docs.docker.com/compose/rails/#define-the-project
 
-version: '3'
+#version: '3' # originale ma non funge su Masagno :/
+version: '2'
 services:
   db:
     image: postgres
