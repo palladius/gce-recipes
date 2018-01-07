@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails app created locally and ran with docker-compose.
 
-Things you may want to cover:
+Non capisco una fava. Funziona da Dio se non ci faccio nessun cambiamento.
+Ma se lancio una migrazione via docker-composer qualcosa di strano succede:
 
-* Ruby version
+    1. Il codice cambia in docker ma cambia anche localmente (wow! Unexoected but wow)
+    2. Ogni volta che runno la roba, mi torna senza la migrazione, db/schema e app/ perde
+       la mia migrazione.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ora provo la migrazione da codice "esterno" vediamo. 
