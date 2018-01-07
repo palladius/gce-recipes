@@ -7,16 +7,23 @@
 # $ docker-compose build
 # change DB config for Postgres.
 
+PROJECT_TAG = ric180107
+
 build-compose:
-	docker-compose build
+	docker-compose -p $(PROJECT_TAG) build
 
 
 run-compose:
-	docker-compose up
+	docker-compose -p $(PROJECT_TAG) up
 
 stop-compose:
-	docker-compose down
+	docker-compose -p $(PROJECT_TAG) down
 	sudo rm tmp/pids/server.pid
+
+migratedb:
+	docker-compose -p $(PROJECT_TAG) run web rake db:create
+	docker-compose -p $(PROJECT_TAG) run web rails db:migrate RAILS_ENV=development
+
 
 # non capisco perche' ma la migrazione e' QUI e' LOCALE quindi non devo tenerne conto in CLI
 # Figatissima!
