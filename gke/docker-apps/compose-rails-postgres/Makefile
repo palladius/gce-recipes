@@ -19,10 +19,11 @@ stop-compose:
 	docker-compose -p $(PROJECT_TAG) down
 	sudo rm tmp/pids/server.pid
 
+# https://github.com/docker/compose/issues/2324
 migratedb:
-	docker-compose -p $(PROJECT_TAG) run web rake db:create
-	docker-compose -p $(PROJECT_TAG) run web rake db:setup
-	docker-compose -p $(PROJECT_TAG) run web rails db:migrate RAILS_ENV=development
+	#docker-compose -p $(PROJECT_TAG) run web rake db:create
+	#docker-compose -p $(PROJECT_TAG) run web rake db:setup
+	docker-compose -p $(PROJECT_TAG) run web rake db:create db:migrate db:seed
 
 install-deps-locally: 
 	@yellow Riccardo this is needed if you want to install LOCALLY and dirty your OS with Postgres and gems and stuff...
@@ -35,3 +36,14 @@ install-deps-locally:
 #	# from: http://guides.rubyonrails.org/command_line.html
 #	docker-compose run web rails generate scaffold HighScore game:string score:integer
 #	docker-compose run web rails db:migrate
+
+test-migration:
+	echo HighScore.all | rails console
+
+withindocker-test-db:
+	@echo Databases:
+	echo '\l' | psql -h db -Upostgres myapp_development 
+#	echo 'SELECT * FROM pg_catalog.pg_tables;'| psql -h db -Upostgres myapp_development | grep -v pg_catalog
+	@echo Tables:
+	echo '\dt' | psql -h db -Upostgres myapp_development 
+ 
