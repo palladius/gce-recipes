@@ -10,6 +10,7 @@ services:
     build: .
     # how to start on 0.0.0.0 by default: https://stackoverflow.com/questions/28668436/how-to-change-the-default-binding-ip-of-rails-4-2-development-server
     command: bundle exec rails s -p ${PORT} -b '0.0.0.0'
+    entrypoint: [ "./entrypoint.sh" ]
     environment:
       - GIC=${GIC}
       - FAKE_HOSTNAME="fake-${HOSTNAME}"

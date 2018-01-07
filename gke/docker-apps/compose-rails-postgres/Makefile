@@ -21,6 +21,7 @@ stop-compose:
 
 migratedb:
 	docker-compose -p $(PROJECT_TAG) run web rake db:create
+	docker-compose -p $(PROJECT_TAG) run web rake db:setup
 	docker-compose -p $(PROJECT_TAG) run web rails db:migrate RAILS_ENV=development
 
 install-deps-locally: 
