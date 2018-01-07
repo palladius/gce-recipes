@@ -12,7 +12,7 @@ PROJECT_TAG = ric180107
 build-compose:
 	docker-compose -p $(PROJECT_TAG) build
 
-run-compose:
+run-compose: build-compose
 	docker-compose -p $(PROJECT_TAG) up
 
 stop-compose:
