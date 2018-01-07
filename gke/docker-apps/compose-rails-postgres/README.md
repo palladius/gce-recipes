@@ -18,24 +18,4 @@ Ora provo la migrazione da codice "esterno" vediamo.
     2.
     # https://stackoverflow.com/questions/20082002/migrations-are-pending-run-bin-rake-dbmigrate-rails-env-development-to-resol/20635252
     rails generate model Homepage first_name:string  last_name:string email:string message:text
-  invoke  active_record
-
-
-  # Gumball
-
-  A,b,c
-
-  Sw,Wi,Wa
-
-facts:
-
-- C > Sw
-- A <> Wa
-- Wa < B
-
-hypothesises:
-
-1. A=Wi Impossible
-2. A=Sw, b=Wi, c=Wa
-
-Then A = Swordsman
+    rails generate scaffold HighScore game:string score:integer

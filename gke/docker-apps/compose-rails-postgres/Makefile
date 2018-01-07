@@ -40,6 +40,10 @@ install-deps-locally:
 test-migration:
 	echo HighScore.all | rails console
 
+debug:
+	docker-compose -p $(PROJECT_TAG) run web bash
+
+
 withindocker-test-db:
 	@echo Databases:
 	echo '\l' | psql -h db -Upostgres myapp_development 
