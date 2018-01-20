@@ -1,0 +1,9 @@
+# Dockerfile from https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+
+FROM node:6.9.2
+EXPOSE 8080
+COPY hue-files/ .
+COPY VERSION .
+
+#CMD node server.js
+CMD node index.html
