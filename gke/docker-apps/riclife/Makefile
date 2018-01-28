@@ -51,3 +51,6 @@ run-from-cloud-funge:
 
 run-once-on-prod-mysql:
 	./run-once-on-prod-mysql.sh
+
+run-cloud-works:
+	docker run -p 3000:3000 -it gcr.io/ric-cccwiki/riclife:funge  /root/riclife/script/server
