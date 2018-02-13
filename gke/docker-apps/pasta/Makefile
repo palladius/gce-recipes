@@ -19,7 +19,7 @@ run-local: build
 
 # index seems broken. try: http://rubino.palladius.eu:3000/pastas instead
 # might be a login issue, try this instead: http://rubino.palladius.eu:3000/login
-run-prod:
+run-prod: build
 	docker run -it -p 0.0.0.0:3000:3000 pasta script/server -e production
 
 debug-v.2alpha:
