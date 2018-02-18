@@ -13,6 +13,8 @@ kubectl-exec-riclife-bash:
 kubectl-exec-riclife-prod:
 	kubectl exec -it riclife-v092 -c gcr.io/ric-cccwiki/riclife:v0.9.2 script/server -e production
 
+docker-run-riclife-prod:
+	gcloud docker -- run -it gcr.io/ric-cccwiki/riclife:funge riclife/script/server -e production
 
 pod1-up:
 	kubectl create -f pod-riclife-v092.yaml
