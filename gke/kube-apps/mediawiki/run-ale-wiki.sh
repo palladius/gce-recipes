@@ -1,5 +1,13 @@
 #!/bin/bash
 
-source .env-priv.sh
+source "env.sh"
 
-echo 'SHOW TABLES;' | mysql -u $MYSQL_USER -p$MYSQL_PASS -h $MYSQL_HOST
+_mysql() {
+	 mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -H "$MYSQL_HOST" "$MYSQL_DATABASE"
+}
+
+echo mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -h "$MYSQL_HOST" "$MYSQL_DATABASE"
+yellow "Tables:"
+echo 'SHOW TABLES ;' | mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -h "$MYSQL_HOST" "$MYSQL_DATABASE"
+yellow "DBs:"
+echo 'SHOW DATABASES ;' | mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -h "$MYSQL_HOST" "$MYSQL_DATABASE"
