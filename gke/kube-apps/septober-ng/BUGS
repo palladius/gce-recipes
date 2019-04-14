@@ -1,6 +1,0 @@
-BUGS
-====
-
-Error from server (BadRequest): a container name must be specified for pod septober-frontend-rvj9p, choose one of: [septober-ng php-redis]
-
-pod must be wrong :/
